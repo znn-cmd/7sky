@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F7F4EF;
+    --text: #1F1F1F;
+    --accent-gold: #D6B278;
+    --warm-beige: #E9E2D2;
+    --light-gray: #F5F5F5;
+    --button-hover: #C89E57;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-gold hover:bg-accent-gold-hover text-white font-semibold py-3 px-8 rounded-2xl transition-all duration-300 shadow-soft hover:shadow-soft-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-white font-semibold py-3 px-8 rounded-2xl transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all duration-300 p-6;
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, #F7F4EF 0%, #E9E2D2 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #D6B278 0%, #C89E57 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
